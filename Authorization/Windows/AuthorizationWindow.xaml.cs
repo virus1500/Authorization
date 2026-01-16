@@ -19,9 +19,29 @@ namespace Authorization.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
+
         public AuthorizationWindow()
         {
             InitializeComponent();
+        }
+
+        private void EnterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(PassPb.ToString()) || string.IsNullOrEmpty(LoginTb.Text))
+            {
+                MessageBox.Show("Введите логин и/или пароль", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                if (LoginTb.Text=="false" || PassPb.ToString()=="null") 
+                {
+                    MessageBox.Show("Неверныей логин или пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    
+                }
+            }
         }
     }
 }
